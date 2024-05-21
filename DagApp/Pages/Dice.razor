@@ -1,0 +1,20 @@
+@page "/dice"
+
+<PageTitle>Dice</PageTitle>
+
+<h1>Dice</h1>
+
+<p role="status">Rolled number: @currentRoll</p>
+
+<button class="btn btn-primary" @onclick="RollDice">Roll the dice</button>
+
+
+@code {
+    private int currentRoll;
+
+    private void RollDice()
+    {
+        Random random = new Random();
+        currentRoll = random.Next(1, 7);
+    }
+}
